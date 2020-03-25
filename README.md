@@ -6,15 +6,16 @@
 1.2 Windows  
 `pip3 install pymysql`  
 
-2.cnf.ini 文件内容  
+2.导入SimplifyuseMySQL
+'''import SimplifyuseMySQL'''
+
+3.cnf.ini 文件内容  
 [db]  
 db_host = 192.168.137.137  
 db_port = 3306  
 db_user = root  
 db_pass = root@123  
 db_name = test  
-
-==================================================
 
 函数名称：cnfdb(filename = "cnf.ini")  
 ----
