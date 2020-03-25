@@ -5,7 +5,7 @@
 `sudo pip3 install pymysql`  
 `sudo pip3 install configparser`   
 1.2 Windows  
-`pip3 install pymysql` 
+`pip3 install pymysql`  
 `pip3 install configparser`   
 
 2.加载SimplifyuseMySQL  
