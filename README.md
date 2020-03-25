@@ -59,6 +59,6 @@ print (SimplifyuseMySQL.select_datas_column(datas,6))
 #插入
 SQL = "INSERT INTO temptest (cpu,gpu,error,wendu,shidu,times) VALUES ('{cpu}','{gpu}','{error}','{wendu}','{shidu}','{shijian}')".format(cpu = cpu ,gpu = gpu,error = pressure ,wendu = temperature,shidu = humidity,shijian = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
 
-mysql_use.execute_to_mysql(SQL)
+SimplifyuseMySQL.execute_to_mysql(SQL)
 ```
 `[1,2,3,4]`
