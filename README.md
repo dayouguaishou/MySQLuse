@@ -6,8 +6,8 @@
 1.2 Windows  
 `pip3 install pymysql`  
 
-2.导入SimplifyuseMySQL  
-```python
+2.加载SimplifyuseMySQL  
+```Python
 import SimplifyuseMySQL
 ```  
 
@@ -19,6 +19,7 @@ db_user = root
 db_pass = root@123  
 db_name = test  
 
+4.函数说明：
 函数名称：cnfdb(filename = "cnf.ini")  
 ----
 说明：从filename文件中获取mysql连接参数  
@@ -39,6 +40,14 @@ db_name = test
 说明：执行SQL语句  
 返回：无 或输出错误信息  
 
+5.调用示例
+```Python
+import SimplifyuseMySQL
+
+datas = select_MYSQL(SQL = "SELECT * FROM hour1 ")
+print (select_datas_column(datas,6))
+```
+`[1,2,3,4]`
 
 20200318 for Python3 by Wei.Wei
 --------------------------------------------------
