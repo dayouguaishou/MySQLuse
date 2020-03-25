@@ -10,12 +10,7 @@
 `pip3 install pymysql`  
 `pip3 install configparser`   
 
-2.加载SimplifyuseMySQL  
-```Python
-import SimplifyuseMySQL
-```  
-
-3.cnf.ini 文件内容  
+2.cnf.ini 文件内容  
 [db]  
 db_host = 192.168.137.137  
 db_port = 3306  
@@ -23,29 +18,29 @@ db_user = root
 db_pass = root@123  
 db_name = test  
 
-4.函数说明  
+3.函数说明  
 
-4.1 cnfdb(filename = "cnf.ini")  
+3.1 cnfdb(filename = "cnf.ini")  
 ----
 说明：从filename文件中获取mysql连接参数  
 返回：dictionary（字典）-cnfg_dict{}  
 
-4.2 select_MYSQL(SQL)  
+3.2 select_MYSQL(SQL)  
 ----
 说明：查询数据库  
 返回：数据集（元组）-datas() 或输出错误信息  
 
-4.3 select_datas_column(datas,num = 0)  
+3.3 select_datas_column(datas,num = 0)  
 ----
 说明：查询数据集某一列（num）num>=0  
 返回：数据列（list）-list[]  
 
-4.3 execute_to_mysql(SQLS)  
+3.3 execute_to_mysql(SQLS)  
 ----
 说明：执行SQL语句  
 返回：无 或输出错误信息  
 
-5.调用示例
+4.调用示例
 ```Python
 import SimplifyuseMySQL
 
