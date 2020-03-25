@@ -1,10 +1,10 @@
 基于Python3的对MySQL的简易查询模块
-==================================================
-  1.导入pymysql库
-  1.1 Linux
-  `sudo pip3 install pymysql`
-  1.2 Windows
-  `pip3 install pymysql`
+==================================================  
+  1.导入pymysql库  
+  1.1 Linux  
+  `sudo pip3 install pymysql`  
+  1.2 Windows  
+  `pip3 install pymysql`  
 
 20200318 for Python3 by Wei.Wei
 --------------------------------------------------
