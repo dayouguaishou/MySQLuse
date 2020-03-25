@@ -1,10 +1,12 @@
 基于Python3的对MySQL的简易查询模块
 ==================================================  
-1.导入pymysql库  
+1.导入pymysql、configparser库  
 1.1 Linux  
 `sudo pip3 install pymysql`  
+`sudo pip3 install configparser` 
 1.2 Windows  
-`pip3 install pymysql`  
+`pip3 install pymysql` 
+`pip3 install configparser` 
 
 2.加载SimplifyuseMySQL  
 ```Python
