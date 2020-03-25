@@ -1,13 +1,12 @@
 基于Python3的对MySQL的简易查询模块
 ==================================================  
-###1.导入pymysql库
-####1.1 Linux  
+1.导入pymysql库  
+1.1 Linux  
 `sudo pip3 install pymysql`  
-####1.2 Windows  
+1.2 Windows  
 `pip3 install pymysql`  
 
-###2.cnf.ini 文件内容  
-
+2.cnf.ini 文件内容  
 [db]  
 db_host = 192.168.137.137  
 db_port = 3306  
