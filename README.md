@@ -52,7 +52,13 @@ db_name = test
 ```Python
 import SimplifyuseMySQL
 
-datas = select_MYSQL(SQL = "SELECT * FROM hour1 ")
-print (select_datas_column(datas,6))
+#查询
+datas = SimplifyuseMySQL.select_MYSQL(SQL = "SELECT * FROM hour1 ")
+print (SimplifyuseMySQL.select_datas_column(datas,6))
+
+#插入
+SQL = "INSERT INTO temptest (cpu,gpu,error,wendu,shidu,times) VALUES ('{cpu}','{gpu}','{error}','{wendu}','{shidu}','{shijian}')".format(cpu = cpu ,gpu = gpu,error = pressure ,wendu = temperature,shidu = humidity,shijian = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+
+mysql_use.execute_to_mysql(SQL)
 ```
 `[1,2,3,4]`
