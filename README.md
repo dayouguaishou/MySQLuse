@@ -1,5 +1,7 @@
 基于Python3的对MySQL的简易查询模块
 ==================================================  
+20200318 for Python3 by Wei.Wei
+
 1.导入pymysql、configparser库  
 1.1 Linux  
 `sudo pip3 install pymysql`  
@@ -22,6 +24,7 @@ db_pass = root@123
 db_name = test  
 
 4.函数说明  
+
 4.1 cnfdb(filename = "cnf.ini")  
 ----
 说明：从filename文件中获取mysql连接参数  
@@ -50,6 +53,3 @@ datas = select_MYSQL(SQL = "SELECT * FROM hour1 ")
 print (select_datas_column(datas,6))
 ```
 `[1,2,3,4]`
-
-20200318 for Python3 by Wei.Wei
---------------------------------------------------
