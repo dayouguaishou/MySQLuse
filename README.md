@@ -21,7 +21,7 @@ db_user = root
 db_pass = root@123  
 db_name = test  
 
-4.函数说明：  
+4.函数说明  
 4.1 cnfdb(filename = "cnf.ini")  
 ----
 说明：从filename文件中获取mysql连接参数  
