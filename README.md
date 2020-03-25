@@ -6,8 +6,10 @@
 1.2 Windows  
 `pip3 install pymysql`  
 
-2.导入SimplifyuseMySQL
-'''import SimplifyuseMySQL'''
+2.导入SimplifyuseMySQL  
+'''Python
+import SimplifyuseMySQL
+'''
 
 3.cnf.ini 文件内容  
 [db]  
