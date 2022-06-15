@@ -9,11 +9,11 @@ db_user = root
 db_pass = root@123
 db_name = test
 
-函数名称：cnfdb(filename = "cnf.ini")
+函数名称：getConfig(filename = "cnf.ini", section="db")
 说明：从filename文件中获取mysql连接参数
 返回：dictionary（字典）-cnfg_dict{}
 
-函数名称：select_MYSQL(SQL,filename = "cnf.ini"):
+函数名称：select_MYSQL(SQL,filename = "cnf.ini", section="db"):
 说明：指定配置文件（filename）查询数据库
 返回：数据集（元组）-datas() 或输出错误信息
 
@@ -21,7 +21,7 @@ db_name = test
 说明：查询数据集某一列（num）num>=0
 返回：数据列（list）-list[]
 
-函数名称：execute_to_mysql(SQL,filename = "cnf.ini"):
+函数名称：execute_to_mysql(SQL,filename = "cnf.ini", section="db"):
 说明：指定配置文件（filename）执行SQL语句
 返回：无 或输出错误信息
 '''
@@ -33,18 +33,27 @@ import pymysql
 import configparser
 import sys,os
 
-def cnfdb(filename = "cnf.ini"):
-    cf = configparser.ConfigParser()
-    cf.read(os.path.dirname(os.path.abspath(__file__))+'/'+filename)
-    cnfg = []
-    cnfname = ["db_host","db_user","db_pass","db_name","db_port"]
-    for keys in cnfname:
-        cnfg.append(cf.get("db", keys))
-    cnfg_dict = dict(zip(cnfname, cnfg))
-    return cnfg_dict
+def getConfig(filename = "cnf.ini", section="db"):
+    """
+    :param filename 文件名称
+    :param section: 服务
+    :return:返回配置信息(config_dic)
+    """
+    if "/" in filename or "\\" in filename:
+        proDir = filename
+    else:
+        proDir = os.path.split(os.path.realpath(__file__))[0]
+    configPath = os.path.join(proDir, filename)
+    conf = configparser.ConfigParser()
+    conf.read(configPath)
+    config = conf.items(section)
+    config_dic = {}
+    for tups in config:
+        config_dic.update({tups[0]:tups[1]})
+    return config_dic
 
-def select_MYSQL(SQL,filename = "cnf.ini"):
-    conf = cnfdb(filename)
+def select_MYSQL(SQL,filename = "cnf.ini",section="db"):
+    conf = getConfig(filename,section)
     try:
         conn = pymysql.Connect(host=conf["db_host"] , port = int(conf["db_port"]) , user=conf["db_user"], passwd=conf["db_pass"], db=conf["db_name"], charset='utf8')
         cursor = conn.cursor()
@@ -54,7 +63,7 @@ def select_MYSQL(SQL,filename = "cnf.ini"):
         cursor.close()
         conn.close()
     except IOError as e:
-        print ("Error (0) %d: %s" % (e.args[0], e.args[1]))
+        print ("Error (select_MYSQL) %d: %s" % (e.args[0], e.args[1]))
         sys.exit(0)
     return nums
 
@@ -65,8 +74,8 @@ def select_datas_column(datas,num = 0):
     return list
 
 
-def execute_to_mysql(SQLS,filename = "cnf.ini"):
-    conf = cnfdb(filename)
+def execute_to_mysql(SQLS,filename = "cnf.ini",section="db"):
+    conf = getConfig(filename,section)
     try:
         conn = pymysql.Connect(host=conf["db_host"] , port = int(conf["db_port"]) , user=conf["db_user"], passwd=conf["db_pass"], db=conf["db_name"], charset='utf8')
         cursor = conn.cursor()
@@ -75,11 +84,11 @@ def execute_to_mysql(SQLS,filename = "cnf.ini"):
         cursor.close()
         conn.close()
     except pymysql.Error as e:
-        print ("Error %d: %s" % (e.args[0], e.args[1]))
+        print ("Error (execute_to_mysql)%d: %s" % (e.args[0], e.args[1]))
         sys.exit(1)
 
 
 
 if __name__ == '__main__':
-    print(cnfdb())
+    print(getConfig())
     print(select_MYSQL("SELECT * FROM dailiip"))
