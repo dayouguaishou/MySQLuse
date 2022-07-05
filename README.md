@@ -28,12 +28,12 @@ db_name = test
 
 3.函数说明  
 
-3.1 cnfdb(filename = "cnf.ini")  
+3.1 getConfig(filename = "cnf.ini", section="db")
 ----
 说明：从filename文件中获取mysql连接参数  
 返回：dictionary（字典）-cnfg_dict{}  
 
-3.2 select_MYSQL(SQL)  
+3.2 select_MYSQL(SQL,filename = "cnf.ini", section="db")  
 ----
 说明：查询数据库  
 返回：数据集（元组）-datas() 或输出错误信息  
@@ -43,7 +43,7 @@ db_name = test
 说明：查询数据集某一列（num）num>=0  
 返回：数据列（list）-list[]  
 
-3.3 execute_to_mysql(SQLS)  
+3.3 execute_to_mysql(SQLS,filename = "cnf.ini", section="db")  
 ----
 说明：执行SQL语句  
 返回：无 或输出错误信息  
