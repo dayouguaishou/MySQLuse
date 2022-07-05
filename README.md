@@ -31,11 +31,10 @@ db_name = test
 3.1 getConfig(filename = "cnf.ini", section="db")
 ----
 说明：从filename文件中获取mysql连接参数
-
+```
 filename：该参数可以是配置文件的路径
-
 section：该参数是配置文件下的项目名称
-
+```
 返回：dictionary（字典）-cnfg_dict{}  
 
 3.2 select_MYSQL(SQL,filename = "cnf.ini", section="db")  

@@ -109,5 +109,5 @@ def execute_SQLlist_to_mysql(SQLlist=[],filename = "cnf.ini",section="db"):
 
 
 if __name__ == '__main__':
-    print(getConfig())
-    print(select_MYSQL("SELECT * FROM dailiip"))
+    print(getConfig(section="db2"))
+    print(select_MYSQL("SELECT * FROM real_data", section="db2"))
