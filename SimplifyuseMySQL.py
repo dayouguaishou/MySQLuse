@@ -93,6 +93,19 @@ def execute_to_mysql(SQLS,filename = "cnf.ini",section="db"):
         print ("Error (execute_to_mysql)%d: %s" % (e.args[0], e.args[1]))
         sys.exit(1)
 
+def execute_SQLlist_to_mysql(SQLlist=[],filename = "cnf.ini",section="db"):
+    conf = getConfig(filename,section)
+    try:
+        conn = pymysql.Connect(host=conf["db_host"] , port = int(conf["db_port"]) , user=conf["db_user"], passwd=conf["db_pass"], db=conf["db_name"], charset='utf8')
+        cursor = conn.cursor()
+        for SQLS in SQLlist:
+            cursor.execute(SQLS)
+        conn.commit()
+        cursor.close()
+        conn.close()
+    except pymysql.Error as e:
+        print ("Error (execute_to_mysql)%d: %s" % (e.args[0], e.args[1]))
+        sys.exit(1)
 
 
 if __name__ == '__main__':
