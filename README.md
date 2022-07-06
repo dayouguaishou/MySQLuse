@@ -50,9 +50,16 @@ section：该参数是配置文件下的项目名称
 3.3 execute_to_mysql(SQLS,filename = "cnf.ini", section="db")  
 ----
 说明：执行SQL语句  
-返回：无 或输出错误信息  
+返回：无 或输出错误信息
+
+3.4 execute_SQLlist_to_mysql(SQLlist=[],filename = "cnf.ini",section="db")
+---
+说明：批量执行SQL语句
+参数：SQLlist = list[SQL1,SQL2,...]
+返回：无 或输出错误信息
 
 4.调用示例
+
 ```Python
 import SimplifyuseMySQL
 
