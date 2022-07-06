@@ -9,27 +9,27 @@ db_user = root
 db_pass = root@123
 db_name = test
 
-函数名称：getConfig(filename = "cnf.ini", section="db")
-说明：从filename文件中获取mysql连接参数
-filename：该参数可以是配置文件的路径
-section：该参数是配置文件下的项目名称
-返回：dictionary（字典）-cnfg_dict{}
+函数名称:getConfig(filename = "cnf.ini", section="db")
+说明:从filename文件中获取mysql连接参数
+filename:该参数可以是配置文件的路径
+section:该参数是配置文件下的项目名称
+返回:dictionary(字典)-cnfg_dict{}
 
-函数名称：select_MYSQL(SQL,filename = "cnf.ini", section="db"):
-说明：指定配置文件（filename）查询数据库
-filename：该参数可以是配置文件的路径
-section：该参数是配置文件下的项目名称
-返回：数据集（元组）-datas() 或输出错误信息
+函数名称:select_MYSQL(SQL,filename = "cnf.ini", section="db"):
+说明:指定配置文件(filename)查询数据库
+filename:该参数可以是配置文件的路径
+section:该参数是配置文件下的项目名称
+返回:数据集(元组)-datas() 或输出错误信息
 
-函数名称：select_datas_column(datas,num = 0)
-说明：查询数据集某一列（num）num>=0
-返回：数据列（list）-list[]
+函数名称:select_datas_column(datas,num = 0)
+说明:查询数据集某一列(num)num>=0
+返回:数据列(list)-list[]
 
-函数名称：execute_to_mysql(SQL,filename = "cnf.ini", section="db"):
-说明：指定配置文件（filename）执行SQL语句
-filename：该参数可以是配置文件的路径
-section：该参数是配置文件下的项目名称
-返回：无 或输出错误信息
+函数名称:execute_to_mysql(SQL,filename = "cnf.ini", section="db"):
+说明:指定配置文件(filename)执行SQL语句
+filename:该参数可以是配置文件的路径
+section:该参数是配置文件下的项目名称
+返回:无 或输出错误信息
 '''
 
 #import MySQLdb as mdb
