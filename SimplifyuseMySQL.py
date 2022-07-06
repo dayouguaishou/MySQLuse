@@ -104,7 +104,7 @@ def execute_SQLlist_to_mysql(SQLlist=[],filename = "cnf.ini",section="db"):
         cursor.close()
         conn.close()
     except pymysql.Error as e:
-        print ("Error (execute_to_mysql)%d: %s" % (e.args[0], e.args[1]))
+        print ("Error (execute_SQLlist_to_mysql)%d: %s" % (e.args[0], e.args[1]))
         sys.exit(1)
 
 
