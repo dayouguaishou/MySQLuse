@@ -69,7 +69,7 @@ def select_MYSQL(SQL,filename = "cnf.ini",section="db"):
         cursor.close()
         conn.close()
     except IOError as e:
-        print ("Error (select_MYSQL) %d: %s" % (e.args[0], e.args[1]))
+        print("Error (select_MYSQL) %d: %s" % (e.args[0], e.args[1]))
         sys.exit(0)
     return nums
 
